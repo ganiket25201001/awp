@@ -1,0 +1,89 @@
+prac1a
+int a, b, c, d;
+            Console.WriteLine("Enter 4 numbers: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            c = Convert.ToInt32(Console.ReadLine());
+            d = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Product = " + (a * b * c * d));
+            Console.ReadKey();
+
+string operations:-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+class Program
+{
+static void Main(string[] args)
+{
+string s1, s2;
+Console.WriteLine("Write First and Last name: ");
+s1 = Console.ReadLine();
+s2 = Console.ReadLine();
+Console.WriteLine("s1+s2 = " + String.Concat(s1, s2));
+Console.WriteLine("s1 = " + s1.ToLower());
+Console.WriteLine("s1 = " + s1.ToUpper());
+Console.WriteLine("s2 = " + s2.ToLower());
+Console.WriteLine("s2 = " + s2.ToUpper());
+Console.WriteLine("Trim s1 = " + s1.Trim());
+Console.WriteLine("Trim s2 = " + s2.Trim());
+Console.WriteLine("Check if s1 is saame as s2 = " + string.Equals(s1, s2));
+Console.WriteLine("last index :" + s1.LastIndexOf("a"));
+Console.WriteLine("index of :" + s2.IndexOf("c"));
+Console.WriteLine("substring :" + s1.Substring(3));
+Console.WriteLine("startwith :" + s1.StartsWith("n"));
+Console.WriteLine("endswith :" + s2.EndsWith("y"));
+Console.ReadKey();
+}
+}
+}
+
+enter and retrieve:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+struct Student
+{
+public string sid, sname, scourse;
+public int day, month, year;
+}
+class Program
+{
+static void Main(string[] args)
+{
+Student[] s = new Student[3];
+for(int i = 0; i<3;i++)
+{
+Console.WriteLine("Enter ID: ");
+s[i].sid = Console.ReadLine();
+Console.WriteLine("Enter Name: ");
+s[i].sname = Console.ReadLine();
+Console.WriteLine("Enter Course: ");
+s[i].scourse = Console.ReadLine();
+Console.WriteLine("Enter Day: ");
+s[i].day = Convert.ToInt32( Console.ReadLine());
+Console.WriteLine("Enter Month: ");
+s[i].month = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Year: ");
+s[i].year = Convert.ToInt32(Console.ReadLine());
+}
+for (int i = 0; i < 3; i++)
+{
+Console.WriteLine("Student Id: " + s[i].sid);
+Console.WriteLine("Student name: " + s[i].sname);
+Console.WriteLine("Student Course: " + s[i].scourse);
+Console.WriteLine("Student DOB: " + s[i].day + ":" + s[i].month + ":" + s[i].year);
+}
+Console.ReadKey();
+}
+}
+}
+
