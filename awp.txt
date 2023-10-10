@@ -1,89 +1,2370 @@
-prac1a
-int a, b, c, d;
-            Console.WriteLine("Enter 4 numbers: ");
-            a = Convert.ToInt32(Console.ReadLine());
-            b = Convert.ToInt32(Console.ReadLine());
-            c = Convert.ToInt32(Console.ReadLine());
-            d = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Product = " + (a * b * c * d));
+PRACTICAL NO. : 01
+
+1:Write a console application that obtains four int values from the user and displays the 
+product.
+
+code:
+using System;
+namespace ConsoleApplication1
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ int num1, num2,num3,num4,prod;
+ Console.Write("Enter number 1: ");
+ num1 = Int32.Parse(Console.ReadLine());
+ Console.Write("Enter number 2: ");
+ num2 = Convert.ToInt32(Console.ReadLine());
+ Console.Write("Enter number 3: ");
+ num3 = Convert.ToInt32(Console.ReadLine());
+ Console.Write("Enter number 4: ");
+ num4 = Convert.ToInt32(Console.ReadLine());
+ prod = num1 * num2 * num3 * num4;
+ Console.WriteLine(num1 + "*" + num2 + "*" + num3 + "*" + num4 + "=" + prod);
+ }
+ }
+}
+
+2:) Create an application to demonstrate string operations .
+
+code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp11
+{
+    class StringMethods
+    {
+        static void Main(string[] args)
+        {
+            string s1 = "King";
+            string s2 = " Xerxus";
+            string s3 = "Emperor";
+ 
+            Console.WriteLine("s1 : " + s1);
+            Console.WriteLine("s2 : " + s2);
+            Console.WriteLine("The length of s1 : " + s1.Length);
+            Console.WriteLine("The length of s2 : " + s2.Length);
+            Console.WriteLine("Uppercase of s1 : " + s1.ToUpper());
+            Console.WriteLine("Lowercase of  s2 : " + s2.ToLower());
+            Console.WriteLine("Concatenation of s1 & s2 : " + String.Concat(s1, s2));
+            Console.WriteLine("Substring of s2 : " + s2.Substring(2, 3));
+            Console.WriteLine("Replace King to Emperor : " + s1.Replace(s1, s3) + s2);
+            Console.WriteLine("s1 starts with D : " + s1.StartsWith("D"));
+            Console.WriteLine("s2 starts with X : " + s2.StartsWith("X"));
+            Console.WriteLine("Trimming of s2 : " + s2.Trim());
             Console.ReadKey();
+        }
+    }
+}
 
-string operations:-
+c) Create an application that receives the (Student Id, Student Name, Course Name, Date of Birth) information from a set of students. The application should also display the information of all the students once the data entered.
+Program:
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace ConsoleApp1
+ 
+namespace ConsoleApp11
 {
-class Program
-{
-static void Main(string[] args)
-{
-string s1, s2;
-Console.WriteLine("Write First and Last name: ");
-s1 = Console.ReadLine();
-s2 = Console.ReadLine();
-Console.WriteLine("s1+s2 = " + String.Concat(s1, s2));
-Console.WriteLine("s1 = " + s1.ToLower());
-Console.WriteLine("s1 = " + s1.ToUpper());
-Console.WriteLine("s2 = " + s2.ToLower());
-Console.WriteLine("s2 = " + s2.ToUpper());
-Console.WriteLine("Trim s1 = " + s1.Trim());
-Console.WriteLine("Trim s2 = " + s2.Trim());
-Console.WriteLine("Check if s1 is saame as s2 = " + string.Equals(s1, s2));
-Console.WriteLine("last index :" + s1.LastIndexOf("a"));
-Console.WriteLine("index of :" + s2.IndexOf("c"));
-Console.WriteLine("substring :" + s1.Substring(3));
-Console.WriteLine("startwith :" + s1.StartsWith("n"));
-Console.WriteLine("endswith :" + s2.EndsWith("y"));
-Console.ReadKey();
+    class Structure
+    {
+        struct student
+        {
+            public int id, day, month, year;
+            public string name, course;
+        }
+        static void Main(string[] args)
+        {
+            student[] s = new student[3];
+ 
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Student : " + (i + 1));
+ 
+                Console.WriteLine("Student Id : ");
+                s[i].id = Convert.ToInt32(Console.ReadLine());
+ 
+                Console.WriteLine("Student Name : ");
+                s[i].name = Console.ReadLine();
+ 
+                Console.WriteLine("Course Name : ");
+                s[i].course = Console.ReadLine();
+ 
+                Console.WriteLine("Day : ");
+                s[i].day = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Month : ");
+                s[i].month = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Year : ");
+                s[i].year = Convert.ToInt32(Console.ReadLine());
+            }
+ 
+            Console.WriteLine("Displaying student information:");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Student ID : " + s[i].id);
+                Console.WriteLine("Student Name : " + s[i].name);
+                Console.WriteLine("Course Name : " + s[i].course);
+          	Console.WriteLine("Date of Birth : " + s[i].day + "/" + s[i].month + "/" + s[i].year);
+            }
+            Console.ReadKey();
+        }
+    }
 }
-}
-}
+d) Create an application to demonstrate following operations:
+i.	Generate Fibonacci series.  
+ii.	Test for prime numbers. 
+iii.	Test for vowels. 
+iv.	Use of foreach loop with arrays 
 
-enter and retrieve:
+Program 1:
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace ConsoleApp1
+ 
+namespace ConsoleApp11
 {
-struct Student
-{
-public string sid, sname, scourse;
-public int day, month, year;
-}
-class Program
-{
-static void Main(string[] args)
-{
-Student[] s = new Student[3];
-for(int i = 0; i<3;i++)
-{
-Console.WriteLine("Enter ID: ");
-s[i].sid = Console.ReadLine();
-Console.WriteLine("Enter Name: ");
-s[i].sname = Console.ReadLine();
-Console.WriteLine("Enter Course: ");
-s[i].scourse = Console.ReadLine();
-Console.WriteLine("Enter Day: ");
-s[i].day = Convert.ToInt32( Console.ReadLine());
-Console.WriteLine("Enter Month: ");
-s[i].month = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter Year: ");
-s[i].year = Convert.ToInt32(Console.ReadLine());
-}
-for (int i = 0; i < 3; i++)
-{
-Console.WriteLine("Student Id: " + s[i].sid);
-Console.WriteLine("Student name: " + s[i].sname);
-Console.WriteLine("Student Course: " + s[i].scourse);
-Console.WriteLine("Student DOB: " + s[i].day + ":" + s[i].month + ":" + s[i].year);
-}
-Console.ReadKey();
-}
-}
+    class Fibonacci
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Enter the number of terms : ");
+            n = Convert.ToInt32(Console.ReadLine());
+ 
+            int a = 0, b = 1, c;
+            Console.WriteLine("The Fibonacci series is : ");
+            Console.WriteLine(a + " " + b);
+ 
+            for (int i = 2; i < n; i++)
+            {
+                c = a + b;
+                Console.WriteLine(c);
+                a = b;
+                b = c;
+            }
+            Console.ReadKey();
+        }
+    }
 }
 
+Program 2:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp11
+{
+    class Prime
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            Console.WriteLine("Enter a number: ");
+            number = Convert.ToInt32(Console.ReadLine());
+ 
+            bool isPrime = true;
+            for (int i = 2; i <= number / 2; i++)
+            {
+                if (number % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+ 
+            if (isPrime)
+            {
+                Console.WriteLine(number + " is a prime number");
+            }
+            else
+            {
+                Console.WriteLine(number + " is not a prime number");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+Program 3:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp11
+{
+    class Vowel
+    {
+        static void Main(string[] args)
+        {
+            char ch;
+            Console.WriteLine("Enter a character: ");
+            ch = Console.ReadLine()[0];
+ 
+            // Check if the character is a vowel
+            bool isVowel = (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+ 
+            if (isVowel)
+            {
+                Console.WriteLine("The character is a vowel.");
+            }
+            else
+            {
+                Console.WriteLine("The character is not a vowel.");
+            }
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+Program 4:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp11
+{
+    class forEachArray
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = { 1, 2, 3, 4, 5 };
+ 
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+Practical 2:
+
+1. Working with Object Oriented C#
+
+a.Create simple application to perform following operations i. Finding factorial Value ii. Money Conversion iii. Quadratic Equation iv. Temperature Conversion.
+
+code:
+
+i. Finding factorial value
+
+Program file (Main file)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            factorial f = new factorial();
+            Console.WriteLine("Enter a number = ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            f.getFact(6);
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+Factorial class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class factorial
+    {
+        public void getFact(int n) {
+            int f = 1;
+            for (int i = 1; i <= n; i++) {
+                f = f * i;
+            }
+            Console.WriteLine("Factorial = " + f);
+        }
+    }
+}
+
+
+ii. Money conversion
+
+[Dollar to Rs.]
+Program file (Main file)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class factorial
+    {
+        public void getFact(int n) {
+            int f = 1;
+            for (int i = 1; i <= n; i++) {
+                f = f * i;
+            }
+            Console.WriteLine("Factorial = " + f);
+        }
+    }
+}
+
+
+class file
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Conversion
+    {
+        public void dollarToRs(int d) {
+            double r = d * 82.32;
+            Console.WriteLine(d + " Dollars = " + "Rs. = " + r);
+        }
+    }
+}
+
+
+[Rs. To Dollar]
+Program file (Main file)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Conversion c = new Conversion();
+            Console.WriteLine("Enter the Rs. = ");
+            double n = Convert.ToDouble(Console.ReadLine());
+ 
+            c.RsToDollar(n);
+            Console.ReadKey();
+        }
+    }
+}
+
+
+class file
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Conversion
+    {
+        //public void dollarToRs(int d) {
+        //    double r = d * 82.32;
+        //    Console.WriteLine(d + " Dollars = " + "Rs. = " + r);
+        //}
+        public void RsToDollar(double r)
+        {
+            double d = r / 82.32;
+            Console.WriteLine("Rs. " + r + " = $" + d);
+        }
+    }
+}
+
+
+b. Create simple application to demonstrate use of following concepts
+i. Function Overloading ii. Inheritance (all types)
+iii. Constructor overloading iv. Interfaces
+
+i. Function Overloading
+Program file (main file)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            functionoverloading f = new functionoverloading();
+            f.Add(10);
+            f.Add(20, 30);
+            f.Add(40, 50, 60);
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+
+class file
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class functionoverloading
+    {
+        public void Add(int n) {
+            Console.WriteLine("Add : n = " + (n + 20));
+        }
+ 
+        public void Add(int a, int b)
+        {
+            Console.WriteLine("Add : a + b = " + (a + b));
+        }
+ 
+        public void Add(int c, int d, int e)
+        {
+            Console.WriteLine("Add : c + d + e = " + (c + d + e));
+        }
+    }
+}
+
+
+
+ii. Inheritance (All types)
+Single Inheritance
+Program.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp1 {
+    class Program {
+        static void Main(string[] args) {
+            Table t = new Table("Wood", 2000, 12, 1000);
+            t.display();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Furniture.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp1 {
+    class Furniture {
+        public string material;
+        public double price;
+ 
+        public Furniture(string material, double price) {
+            this.material = material;
+            this.price = price;
+        }
+    }
+}
+
+
+
+Table.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp1 {
+    class Table : Furniture {
+        double height, surface_Area;
+        public Table(string material, double price, double height, double surface_Area):base(material, price) {
+            this.height = height;
+            this.surface_Area = surface_Area;
+        }
+        public void display() {
+            Console.WriteLine("Furniture Material : " + material);
+            Console.WriteLine("Furniture Price : " + price);
+            Console.WriteLine("Table height : " + height);
+            Console.WriteLine("Table Surface Area : " + surface_Area);
+        }
+    }
+}
+
+
+Multilevel Inheritance
+Program.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp2 {
+    class Program {
+        static void Main(string[] args) {
+            Salary s = new Salary(10000, "King");
+            s.TA = 5000;
+            s.DA = 25000;
+            s.gross_sal();
+            Console.ReadKey();
+        }
+    }
+}
+
+Gross.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp2 {
+    interface Gross {
+        int TA { get; set; }
+        int DA { get; set; }
+        void gross_sal();
+    }
+}
+
+Employee.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp2 {
+    class Employee {
+        public string name;
+ 
+        public Employee(string name) {
+            this.name = name;
+        }
+        public int basic_sal(int b) {
+            return b;
+        }
+    }
+}
+
+
+Salary.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp2 {
+    class Salary:Employee, Gross {
+        int hra, ta, da;
+ 
+        public Salary(int hra, string name):base(name) {
+            this.hra = hra;
+        }
+ 
+        public int TA {
+            get { return ta; }
+            set { ta = value; }
+        }
+        public int DA {
+            get { return da; }
+            set { da = value; }
+        }
+        public void gross_sal() {
+            Console.WriteLine("HRA : " + hra);
+            Console.WriteLine("TA : " + TA);
+            Console.WriteLine("DA : " + DA);
+            Console.WriteLine("Gross Salary : " + (basic_sal(20000) + hra + TA + DA));
+        }
+    }
+}
+
+Multilevel Inheritance
+Student.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp4 {
+    class Student {
+        public string Name { get; set; }
+        public int Roll_No { get; set; }
+ 
+        public Student(string name, int roll_No)
+        {
+            Name = name;
+            Roll_No = roll_No;
+        }
+    }
+}
+
+
+Test.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp4
+{
+    class Test : Student {
+        public int Marks1 { get; set; }
+        public int Marks2 { get; set; }
+ 
+        public Test(string name, int roll_No, int marks1, int marks2) : base(name, roll_No)
+        {
+            Marks1 = marks1;
+            Marks2 = marks2;
+        }
+    }
+}
+
+
+Result.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp4
+{
+    class Result : Test {
+        public int Total { get; set; }
+ 
+        public Result(string name, int roll_No, int marks1, int marks2) : base(name, roll_No, marks1, marks2) {
+            Total = Marks1 + Marks2;
+        }
+    }
+}
+
+
+Program.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp4 {
+    class Program {
+        static void Main(string[] args) {
+            Result result = new Result("King Xerxus", 49, 90, 80);
+ 
+            Console.WriteLine("Name : {0}", result.Name);
+            Console.WriteLine("Roll No : {0}", result.Roll_No);
+            Console.WriteLine("Marks1 : {0}", result.Marks1);
+            Console.WriteLine("Marks2 : {0}", result.Marks2);
+            Console.WriteLine("Total : {0}", result.Total);
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Hierarchichal Inheritance
+using System;
+namespace HierarchicalInheritance
+{
+    class Employee
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public double Salary { get; set; }
+ 
+        public Employee(string name, int age, double salary)
+        {
+            this.Name = name;
+            this.Age = age;
+            this.Salary = salary;
+        }
+ 
+        public void PrintDetails()
+        {
+            Console.WriteLine("Name: {0}", this.Name);
+            Console.WriteLine("Age: {0}", this.Age);
+            Console.WriteLine("Salary: {0}", this.Salary);
+        }
+    }
+ 
+    class Programmer : Employee
+    {
+        public string ProgrammingLanguage { get; set; }
+ 
+        public Programmer(string name, int age, double salary, string programmingLanguage) : base(name, age, salary)
+        {
+            this.ProgrammingLanguage = programmingLanguage;
+        }
+    }
+ 
+    class Manager : Employee
+    {
+        public string Department { get; set; }
+ 
+        public Manager(string name, int age, double salary, string department) : base(name, age, salary)
+        {
+            this.Department = department;
+        }
+    }
+ 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Programmer programmer = new Programmer("King Xerxus", 30, 100000, "Python");
+            Manager manager = new Manager("Farman Kazi", 40, 200000, "IT");
+ 
+            Console.WriteLine("Programmer:");
+            programmer.PrintDetails();
+ 
+            Console.WriteLine("\nManager:");
+            manager.PrintDetails();
+        }
+    }
+}
+
+
+iii. Constructor overloading
+Program file (Main file)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //factorial f = new factorial();
+            //Console.WriteLine("Enter a number = ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //f.getFact(6);
+ 
+            //Conversion c = new Conversion();
+            //Console.WriteLine("Enter the Rs. = ");
+            //double n = Convert.ToDouble(Console.ReadLine());
+ 
+            //c.RsToDollar(n);
+ 
+            //functionoverloading f = new functionoverloading();
+            //f.Add(10);
+            //f.Add(20, 30);
+            //f.Add(40, 50, 60);
+ 
+            Constructors c = new Constructors();
+            Constructors a = new Constructors(10, 20);
+            Constructors b = new Constructors(a);
+ 
+            c.display();
+            a.display();
+            b.display();
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+
+class file
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp12
+{
+    class Constructors
+    {
+        int length, breadth;
+ 
+        public Constructors() {
+            length = 10;
+            breadth = 20;
+        }
+ 
+        public Constructors(int length, int breadth)
+        {
+            this.length = length;
+            this.breadth = breadth;
+        }
+ 
+        public Constructors(Constructors c) {
+            this.length = c.length;
+            this.breadth = c.breadth;
+        }
+ 
+        static Constructors() {
+            Console.WriteLine("Static constructor");
+        }
+ 
+        public void display() {
+            Console.WriteLine("Area of Rectangle = " + (length * breadth));
+        }
+    }
+}
+
+c.Create simple application to demonstrate use of Delegates and events
+
+Program
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp3 {
+ 
+    public delegate void delMethod(string name);
+    class EventEx {
+        public event delMethod myevent;
+        public void raiseEvent(string msg) {
+            if (myevent != null) {
+                myevent(msg);
+            }
+        }
+        public void getMessage(string name) {
+            Console.WriteLine(name);
+        }
+    }
+    class Program {
+        static void Main(string[] args) {
+            EventEx ex = new EventEx();
+            delMethod d1 = ex.getMessage;
+ 
+            ex.myevent += d1;
+            ex.raiseEvent("My Event Raised");
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+Practical 3:
+
+1. Working with Web Forms and Controls
+
+a.Create a simple web page with various sever controls to demonstrate setting and use of their properties. (Example : AutoPostBack)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+ 
+namespace WebApplication1
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.IsPostBack) {
+                DrDList2.Items.Add("Black");
+                DrDList2.Items.Add("Blue");
+                DrDList2.Items.Add("Green");
+                DrDList2.Items.Add("White");
+            }
+        }
+ 
+        protected void BtnDisplay_Click(object sender, EventArgs e)
+        {
+            if (ChkBold.Checked)
+                labelDisp.Font.Bold = true;
+            else
+                labelDisp.Font.Bold = false;
+ 
+            if(ChkItalic.Checked)
+                labelDisp.Font.Italic = true;
+            else
+                labelDisp.Font.Italic = false;
+ 
+            if (ChkUnderline.Checked)
+                labelDisp.Font.Underline = true;
+            else
+                labelDisp.Font.Underline = false;
+ 
+            if (RdbRed.Checked)
+                labelDisp.ForeColor = System.Drawing.Color.Red;
+ 
+            else if (RdbGreen.Checked)
+                labelDisp.ForeColor = System.Drawing.Color.Green;
+ 
+            else if (RdbBlue.Checked)
+                labelDisp.ForeColor = System.Drawing.Color.Blue;
+ 
+            labelDisp.Font.Name = DrDList1.SelectedItem.Text;
+            labelDisp.Font.Size = Convert.ToInt32(TxtFont.Text);
+ 
+            labelDisp.BackColor = System.Drawing.Color.FromName(DrDList2.Text);
+            labelDisp.Text = TxtName.Text + " - " + TxtMsg.Text;
+        }
+ 
+        protected void ChkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkBox4.Checked)
+                Image1.Visible = true;
+            else
+                Image1.Visible = false;
+        }
+    }
+}
+
+
+
+b. Demonstrate the use of Calendar control to perform following operations.
+           a) Display messages in a calendar control b) Display vacation in a calendar control 
+           c) Selected day in a calendar control using style d) Difference between two calendar dates
+
+HTML:
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm.aspx.cs" Inherits="WebApplication1.WebForm" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" Width="220px" DayNameFormat="Shortest" ShowGridLines="True" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged">
+            <DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
+            <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+            <OtherMonthDayStyle ForeColor="#CC9966" />
+            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+            <SelectorStyle BackColor="#FFCC66" />
+            <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+            <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+        </asp:Calendar>
+        
+        <br/>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> <br/>
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label> <br/>
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label> <br/>
+        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label> <br/>
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label> <br/>
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label> 
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Display" OnClick="DisplayButtonOnClick" />
+        <asp:Button ID="Button2" runat="server" Text="Reset" OnClick="ResetButtonOnClick" />
+    </form>
+</body>
+</html>
+Main 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+ 
+namespace WebApplication1
+{
+    public partial class WebForm : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+ 
+        }
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date.Day == 5 && e.Day.Date.Month == 9)
+            {
+                e.Cell.BackColor = System.Drawing.Color.Blue;
+                Label lbl = new Label();
+                lbl.Text = "<br>Teacher's Day";
+                e.Cell.Controls.Add(lbl);
+                Image img = new Image();
+                img.ImageUrl = "licensed-image.jpg";
+                img.Width = 15;
+                img.Height = 15;
+                e.Cell.Controls.Add(img);
+            }
+ 
+            if (e.Day.Date.Day == 19 && e.Day.Date.Month == 9)
+            {
+                Calendar1.SelectedDate = new DateTime(2023, 9, 19);
+                Calendar1.SelectedDates.SelectRange(Calendar1.SelectedDate, Calendar1.SelectedDate.AddDays(10));
+                Label lbl1 = new Label();
+                lbl1.Text = "<br>Ganpati!";
+                e.Cell.Controls.Add(lbl1);
+            }
+        }
+ 
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            Label1.Text = "Your Selected Date:" + Calendar1.SelectedDate.Date.ToShortDateString();
+        }
+ 
+        protected void DisplayButtonOnClick(object sender, EventArgs e)
+        {
+            Calendar1.Caption = "VSIT";
+            Calendar1.FirstDayOfWeek = FirstDayOfWeek.Sunday;
+            Calendar1.NextPrevFormat = NextPrevFormat.ShortMonth;
+            Calendar1.TitleFormat = TitleFormat.Month;
+            Label2.Text = "Today's Date:" + Calendar1.TodaysDate.ToShortDateString();
+            Label3.Text = "Ganpati Vacation Starts: 9-19-2023";
+            TimeSpan d = new DateTime(2023, 9, 19) - DateTime.Now;
+            Label4.Text = "Days Remaining For Ganpati Vacation:" + d.Days.ToString();
+            TimeSpan d1 = new DateTime(2023, 12, 31) - DateTime.Now;
+            Label5.Text = "Days Remaining for New Year:" + d1.Days.ToString();
+            if (Calendar1.SelectedDate.ToShortDateString() == new DateTime(2023, 9, 19).ToShortDateString())
+            {
+                Label6.Text = "<b>Ganpati Festival Start</b>";
+            }
+ 
+            if (Calendar1.SelectedDate.ToShortDateString() == new DateTime(2023, 9, 29).ToShortDateString())
+            {
+                Label6.Text = "<b>Ganpati Festival End</b>";
+            }
+        }
+ 
+        protected void ResetButtonOnClick(object sender, EventArgs e)
+        {
+            Label1.Text = "";
+            Label2.Text = "";
+            Label3.Text = "";
+            Label4.Text = "";
+            Label5.Text = "";
+            Label6.Text = "";
+            Calendar1.SelectedDates.Clear();
+        }
+ 
+ 
+    }
+}
+
+c. Demonstrate the use of Treeview control perform following operations.
+        a) Treeview control and datalist b) Treeview operations
+
+a.)
+aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+ 
+namespace WebApplication5
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+ 
+        }
+ 
+        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+        {
+            Response.Write("You've selected option: " + TreeView1.SelectedValue);
+        }
+ 
+        protected void TreeView1_TreeNodeCollapsed1(object sender, TreeNodeEventArgs e)
+        {
+            Response.Write("Value collapsed: " + e.Node.Value);
+        }
+ 
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            TreeNodeCollection t;
+            t = TreeView1.CheckedNodes;
+            DataList1.DataSource = t;
+            DataList1.DataBind();
+            DataList1.Visible = true;
+        }
+    }
+}
+
+
+Practical 4:
+
+Working with Form Controls :
+
+a) Create a Registration form to demonstrate use of various Validation controls
+
+WebForm1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Validation.WebForm1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Style="font-weight: 700" Text="Name:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextName" runat="server"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextName" ErrorMessage="*Enter your name" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+ 
+            <asp:Label ID="Label2" runat="server" Style="font-weight: 700" Text="Password:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextPassword" runat="server"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextPassword" ErrorMessage="*Enter your password" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+ 
+            <asp:Label ID="Label3" runat="server" Style="font-weight: 700" Text="Confirm Password:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextConfirmPassword" runat="server"></asp:TextBox>
+            &nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextPassword" ControlToValidate="TextConfirmPassword" ErrorMessage="*Enter same password here too" ForeColor="Red"></asp:CompareValidator>
+            <br />
+ 
+            <asp:Label ID="Label4" runat="server" Style="font-weight: 700" Text="Email ID:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextEmail" runat="server"></asp:TextBox>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextEmail" ErrorMessage="*Enter vaild Email ID" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <br />
+            
+            <asp:Label ID="Label5" runat="server" Style="font-weight: 700" Text="Age:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextAge" runat="server"></asp:TextBox>
+            &nbsp;<asp:RangeValidator ID="RangeValidator" runat="server" ControlToValidate="TextAge" ErrorMessage="*Enter Age between 18 - 100" ForeColor="Red" MaximumValue="18" MinimumValue="100"></asp:RangeValidator>
+            <br />
+            
+            <asp:Label ID="Label6" runat="server" Style="font-weight: 700" Text="User ID:"></asp:Label>&nbsp;&nbsp;
+            <asp:TextBox ID="TextUserID" runat="server"></asp:TextBox>
+            &nbsp;<asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="*Enter atleast single capital, lower case letter &amp; a digit" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ControlToValidate="TextUserID"></asp:CustomValidator>
+            <br />
+            
+            <br />
+            <asp:Label ID="Label7" runat="server" Style="font-weight: 700" Text="Validation summary"></asp:Label>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+            <asp:Button ID="Btn1" runat="server" OnClick="Btn1_Click" Text="VALID" />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Btn2" runat="server" OnClick="Btn2_Click" Text="CANCEL" />
+            <br />
+            <br />
+            <asp:Label ID="LabelMsg" runat="server" Text="[Label]"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+WebForm1.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+ 
+namespace Validation {
+    public partial class WebForm1 : System.Web.UI.Page {
+        protected void Page_Load(object sender, EventArgs e) {
+ 
+        }
+ 
+        protected void Btn1_Click(object sender, EventArgs e) {
+            if (Page.IsValid) {
+                LabelMsg.Text = "This is a valid form.";
+            }
+        }
+ 
+        protected void Btn2_Click(object sender, EventArgs e) {
+            LabelMsg.Text = "No attempt was made to validate this form.";
+        }
+ 
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args) {
+            string str = args.Value;
+            args.IsValid = false;
+ 
+            if (str.Length < 6 || str.Length > 25) {
+                return;
+            }
+ 
+            bool capital = false;
+            foreach (char ch in str) {
+                if (ch >= 'A' && ch <= 'Z') {
+                    capital = true;
+                    break;
+                }
+            }
+ 
+            if (capital) {
+                return;
+            }
+ 
+            bool lower = false;
+            foreach (char ch in str) {
+                if (ch >= 'a' && ch <= 'z') {
+                    lower = true;
+                    break;
+                }
+            }
+ 
+            if (!lower) {
+                return;
+            }
+ 
+            bool digit = false;
+            foreach (char ch in str) {
+                if (ch >= '0' && ch <= '9') {
+                    digit = true;
+                    break;
+                }
+            }
+ 
+            if (!digit) {
+                return;
+            }
+            args.IsValid = true;
+        }
+    }
+}
+
+b) Create Web Form to demonstrate use of Ad rotator Control.
+
+XML file
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>Paint1.png</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <Impressions>10</Impressions>
+    <Keyword>DEVICES</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Paint2.png</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <Impressions>5</Impressions>
+    <Keyword>DEVICES</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Paint3.png</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <Impressions>5</Impressions>
+    <Keyword>DEVICES</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Paint4.png</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <Impressions>5</Impressions>
+    <Keyword>DEVICES</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Paint5.png</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <Impressions>5</Impressions>
+    <Keyword>DEVICES</Keyword>
+  </Ad>
+</Advertisements>
+
+WebForm1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <strong>AD CONTROL<br />
+                <br />
+                <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1" OnAdCreated="AdRotator1_AdCreated" />
+                <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XMLFile1.xml"></asp:XmlDataSource>
+            </strong>
+        </div>
+    </form>
+</body>
+</html>
+
+
+c) Create Web Form to demonstrate use User Controls.
+
+WebUserControl.ascx
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControl1.ascx.cs" Inherits="WebApplication2.WebUserControl1" %>
+<p>
+    <strong>Name&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextName" runat="server"></asp:TextBox>
+    </strong>
+</p>
+<p>
+    <strong>City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextCity" runat="server"></asp:TextBox>
+    </strong>
+</p>
+<p>
+    <asp:Button ID="Button" runat="server" OnClick="Button_Click" Text="SAVE" />
+</p>
+<p>
+    <asp:Label ID="Label1" runat="server" Style="font-weight: 700" Text="LABEL"></asp:Label>
+</p>
+
+WebUserControl1.ascx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+ 
+namespace WebApplication2
+{
+    public partial class WebUserControl1 : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+ 
+        }
+ 
+        protected void Button_Click(object sender, EventArgs e)
+        {
+            Label1.Text = "Name: " + TextName.Text + ", City: " + TextCity.Text;
+        }
+    }
+}
+
+WebForm.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication2.WebForm1" %>
+<%@ Register Src="~/WebUserControl1.ascx" TagName="Register" TagPrefix="UC1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div><strong>USER CONTROL</strong></div>
+        <UC1:Register id="Reg1" runat="server" />
+    </form>
+</body>
+</html>
+
+Practical 5:
+
+5. Working with Navigation, Beautification and Master page.
+
+a) Create Web Form to demonstrate use of Website Navigation controls and Site Map. 
+
+
+Home.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TreeViewMenuSitemapPath.Home" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"></asp:Menu>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1"></asp:TreeView>
+        </div>
+    </form>
+</body>
+</html>
+
+Login.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TreeViewMenuSitemapPath.Login" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Style="font-weight: 700" Text="Welcome to Login Page 🙏"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Style="font-weight: 700" Text="Email-ID"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="Label3" runat="server" Style="font-weight: 700" Text="Password"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="SUBMIT KARO" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+Products.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="TreeViewMenuSitemapPath.Products" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" style="font-weight: 700" Text="Welcome to Product Page 🙏"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+Product1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Product1.aspx.cs" Inherits="TreeViewMenuSitemapPath.Product1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Style="font-weight: 700" Text="Product 1 - 😁"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+Product2.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Product2.aspx.cs" Inherits="TreeViewMenuSitemapPath.Product2" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" style="font-weight: 700" Text="Product 2 - 👌"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+Order.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="TreeViewMenuSitemapPath.Order" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Style="font-weight: 700" Text="Order - 😉"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+Cart.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="TreeViewMenuSitemapPath.Cart1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" style="font-weight: 700" Text="Cart Page - 🛒"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+ServiceSupport.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ServiceSupport.aspx.cs" Inherits="TreeViewMenuSitemapPath.Cart" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" style="font-weight: 700" Text="Service Support - 🤝"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+b) Create a web application to demonstrate use of Master Page with applying Styles and Themes for page beautification. 
+
+Style.css
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    border: double;
+    background-color: #009576;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+Master.Master
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="MasterContentStyleSkin.Master" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>TY B. Sc. I.T. Sem-V Subjects</h1>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+Skin1.skin
+<asp:Label runat="server" ForeColor="white" FontSize="14pt" Font-Names="Monospace" SkinID="LabelSkin"/>
+<asp:Label runat="server" ForeColor="white" FontSize="14pt" Font-Names="Monospace" SkinID="LabelSkin1"/>
+<asp:Label runat="server" ForeColor="black" FontSize="25pt" Font-Names="Times New Roman" />
+<asp:Button runat="server" ForeColor="Blue" BackColor="Maroon" BorderColor="Black" BorderStyle="solid" BorderWidth="1px" FontSize="2px" Font-Names="Arial"/>
+<asp:Button runat="server" ForeColor="White" BackColor="Maroon" BorderColor="Black" BorderStyle="dashed" BorderWidth="1px" FontSize="2px" Font-Names="Arial" SkinID="ButtonID"/>
+
+ContentPage.aspx
+<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ContentPage.aspx.cs" Inherits="MasterContentStyleSkin.WebForm1" %>
+ 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="Label1" runat="server" Text="SPM"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="Label2" runat="server" Text="IoT"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="Label3" runat="server" Text="AI" SkinID="LabelSkin"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="Label4" runat="server" Text="NGT" SkinID="LabelSkin1"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="Label5" runat="server" Text="AWP"></asp:Label>
+    <br />
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" Text="SHOW" SkinID="ButtonSkin" />
+    <asp:Button ID="Button2" runat="server" Text="CANCEL" />
+</asp:Content>
+
+Web.config
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  https://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.7.2" />
+  </system.web>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701" />
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
+    </compilers>
+  </system.codedom>
+  <appSettings>
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="none"/>
+  </appSettings>
+</configuration>
+
+
+Practical 6:
+
+) Create a web application bind data in a multiline textbox by querying in another textbox.
+
+on cliuck of button
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Web;
+
+using System.Web.UI;
+
+using System.Web.UI.WebControls;
+
+using System.Data.SqlClient;
+
+using System.Data;
+
+namespace WebApplication11
+
+{
+
+public partial class WebForm3 : System.Web.UI.Page
+
+{
+
+protected void Page_Load(object sender, EventArgs e)
+
+{
+
+}
+
+protected void Button1_Click(object sender, EventArgs e)
+
+{
+
+SqlConnection con = new SqlConnection(@"Data
+
+Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\exam\source\repos\WebApplication11\WebApplicatio
+
+n11\App_Data\Database1.mdf;Integrated Security=True");
+
+con.Open();
+
+SqlCommand cmd = new SqlCommand(TextBox1.Text, con);
+
+SqlDataReader reader = cmd.ExecuteReader();
+
+TextBox2.Text = "";
+
+while (reader.Read())
+
+{
+
+TextBox2.Text += Environment.NewLine;
+
+for (int i = 0; i < reader.FieldCount - 1; i++)
+
+{
+
+TextBox2.Text += reader[i].ToString().PadLeft(15);
+
+}
+
+}
+
+reader.Close();
+
+con.Close(); } } }
+
+
+
+
+Create a web application to display records in Label by using database.
+
+on button click
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Web;
+
+using System.Web.UI;
+
+using System.Web.UI.WebControls;
+
+using System.Data.SqlClient;
+
+using System.Data;
+
+namespace WebApplication11
+
+{
+
+public partial class WebForm4 : System.Web.UI.Page
+
+{
+
+protected void Page_Load(object sender, EventArgs e)
+
+{
+
+}
+
+protected void Button1_Click(object sender, EventArgs e)
+
+{
+
+SqlConnection con = new SqlConnection(@"Data
+
+Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\exam\source\repos\WebApplication11\WebApplicatio
+
+n11\App_Data\Database1.mdf;Integrated Security=True");
+
+con.Open();
+
+SqlCommand cmd = new SqlCommand("Select Id,name,address from Customer",con);
+
+SqlDataReader reader = cmd.ExecuteReader();
+
+while (reader.Read())
+
+{
+
+Label1.Text += reader["Id"].ToString() + " " + reader["name"].ToString() + " " +
+
+reader["address"].ToString()+"<br>";
+
+}
+
+reader.Close();
+
+con.Close(); } } }
+
+
+
+
+Practical 7:
+
+a) Create a web application to display Databinding using dropdownlist control.
+
+WebForm:
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="datalist.WebForm1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+ 
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database1ConnectionString %>" SelectCommand="SELECT [Name] FROM [Databind_tb]"></asp:SqlDataSource>
+ 
+        </div>
+    </form>
+</body>
+</html>
+
+
+b) Create a web application for to display the phone no of an author using database
+
+Aspx.cs File:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+ 
+ 
+namespace Prac7_b
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+ 
+        }
+ 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String name = TextBox1.Text;
+ 
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Amaan Kondkari\Documents\Database2.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select A_Phone from Author where A_Name='"+name+"'",con);
+            
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Label1.Text = name;
+                Label2.Text = reader["A_Phone"].ToString();
+            }
+            
+            con.Close();
+        }
+    }
+}
+
+WebForm:
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Prac7_b.WebForm1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            Enter Author Name
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="height: 29px" Text="Button" />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+c) Create a web application for inserting and deleting record from a database. (Using Execute-Non-Query).
+Aspx.cs file:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+ 
+namespace Prac7_c
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+ 
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if(TextBox1.Text!=null && TextBox2.Text!=null && TextBox3.Text!= null)
+            {
+                int id = Convert.ToInt32(TextBox1.Text);
+                string name = TextBox2.Text;
+                string phone = TextBox3.Text;
+ 
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Amaan Kondkari\Documents\Database2.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Insert into Author values('"+id+"','"+name+"','"+phone+"')",con);
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    l1.Text = "Data Inserted Successfully";
+ 
+                }
+                
+                else{
+                    l1.Text = "Data not inserted ";
+                }
+                con.Close();
+ 
+ 
+            }
+        }
+ 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text != null)
+            {
+                int id = Convert.ToInt32(TextBox1.Text);
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Amaan Kondkari\Documents\Database2.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Delete from Author where id = '" + id + "'", con);
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    l1.Text = "Record deleted successfully";
+                }
+            }
+        }
+    }
+}
+Webform
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Prac7_c.WebForm1" %>
+ 
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            Enter Id:
+            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <br />
+            <br />
+            Enter Name :
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Enter Phone no:
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insert" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Delete" />
+            <br />
+            <br />
+            <asp:Label ID="l1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <br />
+        </div>
+    </form>
+</body>
+</html>
+
+
+Practical 8:
+
+a) Create a web application to demonstrate various uses and properties of SqlDataSource and data binding using
+
+Drop Down List, GridView, DetailsView, and FormView Control.
+
+DropDownList
+
+Steps:
+
+Database_Connectivity - DropDownList
+
+1.) Click "View" in Top Menu or Ctrl + Alt + S for Server Explorer
+
+2.) Right click on "Data Connections"
+
+3.) Click on "Add Connection..."
+
+4.) Click on "Microsoft SQL Server Database File" -> Click on "Continue"
+
+5.) Name it in Database file name (ASP_practical) -> Click "Ok" -> Click "Yes"
+
+6.) Open Database file (ASP_practical.mdf) -> Right click on Table -> Add New Table
+
+7.) Rename your table name instead of [Table] ([Student])
+
+8.) It'll Open "dbo.Table" -> Enter manually data
+
+9.) Click on Update -> Click on "Update Database"
+
+10.) Right Click on Table Name (Student) -> Click on Show Table Data
+
+11.) Choose "ASP.NET Web Application (.NET Framework)"
+
+12.) Name it (Database_Connectivity) -> Click "Create" button -> Click "Empty" -> Click "Create" button
+
+13.) Click "View" in Top Menu or Ctrl + Alt + L for Solution Explorer
+
+14.) Right click on Project (Database_Connectivity) -> Add -> New Item -> Web Forms (Rename if you want:-
+
+MainPage.aspx) -> Click "Add" button
+
+15.) Click "View" in Top Menu or Ctrl + Alt + X for Toolbox
+
+16.) Drag and Drop "DropDownList"
+
+17.) Click on Arrow -> Click on "Choose Data Source"
+
+18.) Select data source (<New data source...>) -> Select "SQL Database" -> Click "Ok"
+
+19.) Choose Data connection (ASP_practical.mdf) -> Click Save -> Click Save (for ConnectionString) -> Click
+
+on "Next" -> Click on "Test Query" -> Click on "Finish" -> Click on "Ok"
+
+20.) Code behind
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Web;
+
+using System.Web.UI;
+
+using System.Web.UI.WebControls;
+
+using System.Data.SqlClient;
+
+using System.Data; 
+
+namespace Database_Connectivity 
+{ public partial class MainPage : System.Web.UI.Page { protected void Page_Load(object sender, EventArgs e) { } protected void Button1_Click(object sender, EventArgs e) { } protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e) { SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABCD\Documents\ASP_practical.mdf;Integrated Security=True;Connect Timeout=30"); SqlCommand cmd = new SqlCommand("SELECT * FROM Student", con); SqlDataAdapter da = new SqlDataAdapter(cmd); DataSet ds = new DataSet(); da.Fill(ds, "Student"); } protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e) { } protected void BtnDisplay_Click(object sender, EventArgs e) { } } }
+
+1.) Drag and Drop "GridView" from Data 2.) Chosse Data Source (SqlDataSource1)
+
+
+b) Create a web application to display Using Disconnected Data Access and Databinding using GridView.
+
+Program,:-
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Web;
+
+using System.Web.UI;
+
+using System.Web.UI.WebControls;
+
+using System.Data; using System.Data.SqlClient; namespace WebApplication11 { public partial class WebForm2 : System.Web.UI.Page { protected void Page_Load(object sender, EventArgs e) { } protected void Button1_Click(object sender, EventArgs e) { SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\exam\source\repos\WebApplication11\WebApplication11\App_Data\Database1.mdf;Integrated Security=True"); SqlCommand cmd = new SqlCommand("Select * from Student", con); SqlDataAdapter da = new SqlDataAdapter(cmd); DataSet ds = new DataSet(); da.Fill(ds, "Student"); GridView1.DataSource = ds; GridView1.DataBind(); } } }
+
+Practical 9:
+
+a)	Create a web application to demonstrate reading and writing operation with XML
+ 
+Code:
+Webform1.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Xml;
+
+namespace WebApplication15
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            XmlTextWriter writer = new XmlTextWriter("C:/Users/exam/source/repos/WebApplication15/WebApplication15/XMLFile1.xml", null);
+
+            writer.WriteStartDocument();
+
+            writer.WriteStartElement("Details", "");
+            writer.WriteElementString("FirstName", "Farman");
+            writer.WriteElementString("LastName", "Kazi");
+            writer.WriteElementString("College", "VSIT");
+            writer.WriteEndElement();
+
+            writer.WriteEndDocument();
+            writer.Close();
+
+            lb1.Text = "Data written successfully";
+        }
+
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            String xmlNode = "C:/Users/exam/source/repos/WebApplication15/WebApplication15/XMLFile1.xml";
+            XmlReader xmlReader = XmlReader.Create(xmlNode);
+            while (xmlReader.Read())
+            {
+                switch (xmlReader.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        ListBox1.Items.Add("<" + xmlReader.Name + ">");
+                        break;
+                    case XmlNodeType.Text:
+                        ListBox1.Items.Add(xmlReader.Value);
+                        break;
+                    case XmlNodeType.EndElement:
+                        ListBox1.Items.Add("</" + xmlReader.Name + ">");
+                        break;
+                }
+            }
+        }
+    }
+}
+
+Webform1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication15.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="lb1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btn1" runat="server" OnClick="btn1_Click" Text="XML Writer" />
+            <br />
+            <br />
+            <asp:ListBox ID="ListBox1" runat="server" Height="139px" Width="194px"></asp:ListBox>
+            <br />
+            <br />
+            <asp:Button ID="btn2" runat="server" OnClick="btn2_Click" Text="XML Reader" />
+            <br />
+        </div>
+    </form>
+</body>
+</html>
+
+
+b)	Create a web application to demonstrate Form Security and Windows Security with proper Authentication and Authorization properties.
+
+Code:
+XML File:
+<?xml version="1.0"?><Details><FirstName>Farman</FirstName><LastName>Kazi</LastName><College>VSIT</College></Details>
+Welcome.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm3.aspx.cs" Inherits="WebApplication15.WebForm3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Label ID="Label1" runat="server" Text="Welcome to the page"></asp:Label>
+    </form>
+</body>
+</html>
+
+Login.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="WebApplication15.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="UserName"></asp:Label>
+            :
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+<asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+
+            <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />
+            <br />
+            <asp:CheckBox ID="chk" runat="server" Text="[chkRem]" />
+            <br />
+        </div>
+    </form>
+</body>
+</html>
+
+Welcome.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication15
+{
+    public partial class WebForm3 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null) {
+                Label1.Text += "\t"+(Session["Username"].ToString()); }
+        }
+    }
+}
+Web.config:
+    <authentication mode="Forms">
+      <forms loginUrl="WebForm2.aspx"/>
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+    </authorization>
+  </system.web>
+Login.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Security;
+
+namespace WebApplication15
+{
+    public partial class WebForm2 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected bool authenticate(String uname,String pass)
+        {
+            if (uname == "abc")
+            {
+                if (pass == "123")
+                    return true;
+            }
+
+            if (uname == "bcd")
+            {
+                if (pass == "456")
+                    return true;
+            }
+            return false;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (authenticate(TextBox1.Text, TextBox2.Text))
+            {
+                FormsAuthentication.RedirectFromLoginPage(TextBox1.Text, chk.Checked);
+                    Session["Username"] = TextBox1.Text;
+                Response.Redirect("WebForm3.aspx");
+            }
+            else
+            {
+                Response.Write("Invalid username or password");
+            }
+        }
+    }
+}
+
+
+c)	Create a web application to demonstrate use of various Ajax controls.
+
+Code:
+xml:
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>Cir.png</ImageUrl>
+  </Ad>
+  <Ad>
+    <ImageUrl>Star.png</ImageUrl>
+  </Ad>
+</Advertisements>
+.aspx:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication9
+{
+    public partial class WebForm3 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(2000);
+            TextBox1.Text = DateTime.Now.ToLongTimeString();
+        }
+    }
+}
