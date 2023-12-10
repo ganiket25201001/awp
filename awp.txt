@@ -1126,6 +1126,8 @@ Practical 4:
 Working with Form Controls :
 
 a) Create a Registration form to demonstrate use of various Validation controls
+web config:
+<appSettings>  <add key="ValidationSettings:UnobtrusiveValidationMode"   value="none"/>  </appSettings>
 
 WebForm1.aspx
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Validation.WebForm1" %>
@@ -1665,7 +1667,7 @@ Web.config
 
 Practical 6:
 
-) Create a web application bind data in a multiline textbox by querying in another textbox.
+a) Create a web application bind data in a multiline textbox by querying in another textbox.
 
 on cliuck of button
 
@@ -1740,7 +1742,7 @@ con.Close(); } } }
 
 
 
-Create a web application to display records in Label by using database.
+b) Create a web application to display records in Label by using database.
 
 on button click
 
